@@ -1,0 +1,6 @@
+{
+  "name": "1688 Product Research & Studio",
+  "description": "Hệ thống nghiên cứu sản phẩm 1688 chuyên sâu dưới 30 CNY, lọc bẫy giá phụ kiện, phân tích Facebook Ads Việt Nam và xử lý ảnh sản phẩm",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

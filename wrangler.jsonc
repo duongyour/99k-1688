@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "1688-product-research",
+  "main": "server.ts",
+  "compatibility_date": "2026-09-21",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "1688_research_db",
+      "database_id": "d1-1688-research-prod"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "EVIDENCE_BUCKET",
+      "bucket_name": "1688-evidence-snapshots"
+    }
+  ],
+  "queues": {
+    "producers": [
+      {
+        "queue": "1688-research-jobs",
+        "binding": "RESEARCH_QUEUE"
+      }
+    ],
+    "consumers": [
+      {
+        "queue": "1688-research-jobs",
+        "max_batch_size": 10,
+        "max_batch_timeout": 30
+      }
+    ]
+  },
+  "vars": {
+    "APP_NAME": "1688 Product Research & Studio",
+    "DEFAULT_PRICE_CEILING_CNY": "30.0",
+    "ENVIRONMENT": "production"
+  }
+}
